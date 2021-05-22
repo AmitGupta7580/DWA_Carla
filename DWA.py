@@ -146,6 +146,8 @@ class DWA:
         '''
         To be implemented using image fetched from camera
         '''
+        if len(self._obj_dis) == 0:
+            return 0
         ox = self._obj_dis[:, 0]
         oy = self._obj_dis[:, 1]
         dx = trajectory[:, 0] - ox[:, None]
@@ -173,6 +175,8 @@ class DWA:
         """
         Calculate to Lane cost
         """
+        if len(self._lane_points) == 0:
+            return 0
         r = []
         for lane in self._lane_points:
             rm = []
