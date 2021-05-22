@@ -187,9 +187,9 @@ class CameraManager(object):
             # depth image
             if sen_index == 1:
                 if pos_index == 1:
-                    array = array.astype(numpy.float32)
+                    array = array.astype(np.float32)
                     # Apply (R + G * 256 + B * 256 * 256) / (256 * 256 * 256 - 1).
-                    dep_array = numpy.dot(array[:, :, :3], [65536.0, 256.0, 1.0])
+                    dep_array = np.dot(array[:, :, :3], [65536.0, 256.0, 1.0])
                     dep_array /= 16777215.0  # (256.0 * 256.0 * 256.0 - 1.0)
                     # global dep_image
                     self.dep_image = dep_array
